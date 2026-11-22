@@ -2,7 +2,7 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://gc.zgo.at 'sha256-vsE+nSyTOPQcShZtKOTEb9Vif/but/EGGaEH4SgzDDA=' 'sha256-2ZKTei2LfRuM1EWsDiZ5bFwCUgJKqjuHXJep86WRF/0='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob: https://taeyeonconcerts.goatcounter.com; connect-src https://taeyeonconcerts.goatcounter.com; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://gc.zgo.at 'sha256-vsE+nSyTOPQcShZtKOTEb9Vif/but/EGGaEH4SgzDDA=' 'sha256-LUXoxh1CGOxU5w67dXwphlb0+nb4KhHFsr0dr8tQMuY='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob: https://taeyeonconcerts.goatcounter.com; connect-src https://taeyeonconcerts.goatcounter.com; object-src 'none'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="strict-origin">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>TAEYEON Concert Archive</title>
@@ -173,7 +173,7 @@ ol.sl .x{font-size:12px;color:var(--muted)}
 .ptabs .ls{display:none}
 body{overflow-x:clip}
 @media (max-width:640px){
-  .ptabs{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));overflow:visible;touch-action:manipulation;border-bottom-width:2px;padding-block:4px;gap:4px}
+  .ptabs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));overflow:visible;touch-action:manipulation;border-bottom-width:2px;padding-block:4px;gap:4px}
   .ptabs button{flex:initial;padding:9px 4px;font-size:14px;text-align:center;border-bottom:none;margin:0;border-radius:6px}
   .ptabs button[aria-selected="true"]{background:var(--red-soft);color:var(--ink)}
   .ptabs .lf{display:none}
@@ -746,7 +746,7 @@ h1 .r{color:var(--coral-ink)}
   <div class="kicker">太妍 TAEYEON 演唱會・巡演紀錄 · 2015 — 2027</div>
   <h1><span class="r">TAEYEON</span><br><span class="ca">Concert Archive</span></h1>
   <details class="about"><summary>關於這個頁面</summary><p class="lede" style="margin-top:8px">收錄少女時代太妍的個人單獨演唱會、特別公演與日本巡演（含 Showcase 巡演），包括因故取消的場次。Setlist 以나무위키為主、Wikipedia 補充；地圖上點城市可以看到哪一年、哪個巡演在那裡開過。</p></details>
-  <div class="statrow"><div class="stats" id="stats"></div><div class="adon" id="adon" role="img" aria-label="各系列場次比例"></div></div>
+  <div class="statrow"><div class="stats" id="stats"></div></div>
   <div class="next" id="next" hidden></div>
   <div class="otd" id="otd" hidden></div>
 </header>
@@ -755,13 +755,11 @@ h1 .r{color:var(--coral-ink)}
 <nav class="ptabs" role="tablist" aria-label="頁面">
   <button type="button" role="tab" data-v="main" aria-selected="true"><span class="lf">巡演・地圖・Setlist</span><span class="ls">巡演</span></button>
   <button type="button" role="tab" data-v="songs" aria-selected="false"><span class="lf">收錄曲演出統計</span><span class="ls">收錄曲</span></button>
-  <button type="button" role="tab" data-v="sig" aria-selected="false"><span class="lf">開場信號曲</span><span class="ls">信號曲</span></button>
   <button type="button" role="tab" data-v="cmp" aria-selected="false"><span class="lf">Setlist 對照</span><span class="ls">對照</span></button>
   <button type="button" role="tab" data-v="ana" aria-selected="false"><span class="lf">分析</span><span class="ls">分析</span></button>
   <button type="button" role="tab" data-v="play" aria-selected="false"><span class="lf">我的足跡・小遊戲</span><span class="ls">互動</span></button>
 </nav>
-<div class="fbar"><span class="fl">系列</span><div class="chips" id="who" role="group" aria-label="依系列篩選（演唱會・特別公演、日本巡演）"></div><label class="wsel"><span class="sr">依系列篩選</span><select id="whoSel"></select></label></div>
-<div class="abar" id="abar" hidden><nav class="anav" aria-label="分析目錄"><a href="#a-gene">巡演基因圖</a><a href="#a-pos">開場・壓軸・安可</a><a href="#a-title">主打 vs 收錄曲</a><a href="#a-era">時代分布</a><a href="#a-len">每場曲數</a><a href="#a-debut">舞台首唱</a><a href="#a-late">遲來首唱</a><a href="#a-kr">韓國 vs 海外</a><a href="#a-city">城市回訪</a><a href="#a-venue">場館回訪</a><a href="#a-solo">嘉賓舞台</a><a href="#a-carry">少女時代・TTS 曲</a><a href="#a-pair">固定搭檔</a><a href="#a-rev">復活紀錄</a></nav><label class="asel"><span class="fl">跳到</span><select id="anaSel" aria-label="跳到分析區塊"><option value="a-gene">巡演基因圖</option><option value="a-pos">開場・壓軸・安可</option><option value="a-title">主打 vs 收錄曲</option><option value="a-era">時代分布</option><option value="a-len">每場曲數</option><option value="a-debut">舞台首唱</option><option value="a-late">遲來首唱</option><option value="a-kr">韓國 vs 海外</option><option value="a-city">城市回訪</option><option value="a-venue">場館回訪</option><option value="a-solo">嘉賓舞台</option><option value="a-carry">少女時代・TTS 曲</option><option value="a-pair">固定搭檔</option><option value="a-rev">復活紀錄</option></select></label></div>
+<div class="abar" id="abar" hidden><nav class="anav" aria-label="分析目錄"><a href="#a-gene">巡演基因圖</a><a href="#a-pos">開場・壓軸・安可</a><a href="#a-title">主打 vs 收錄曲</a><a href="#a-era">時代分布</a><a href="#a-len">每場曲數</a><a href="#a-debut">舞台首唱</a><a href="#a-late">遲來首唱</a><a href="#a-city">城市回訪</a><a href="#a-venue">場館回訪</a><a href="#a-carry">少女時代・TTS 曲</a><a href="#a-pair">固定搭檔</a><a href="#a-rev">復活紀錄</a></nav><label class="asel"><span class="fl">跳到</span><select id="anaSel" aria-label="跳到分析區塊"><option value="a-gene">巡演基因圖</option><option value="a-pos">開場・壓軸・安可</option><option value="a-title">主打 vs 收錄曲</option><option value="a-era">時代分布</option><option value="a-len">每場曲數</option><option value="a-debut">舞台首唱</option><option value="a-late">遲來首唱</option><option value="a-city">城市回訪</option><option value="a-venue">場館回訪</option><option value="a-carry">少女時代・TTS 曲</option><option value="a-pair">固定搭檔</option><option value="a-rev">復活紀錄</option></select></label></div>
 </div>
 <div id="view-main" style="display:flex;flex-direction:column;gap:48px">
 <section aria-labelledby="tlh" style="display:flex;flex-direction:column;gap:12px">
@@ -798,13 +796,6 @@ h1 .r{color:var(--coral-ink)}
 <section aria-labelledby="ch" style="display:flex;flex-direction:column;gap:12px">
   <h2 class="sec" id="ch">城市索引</h2>
   <details class="mdesc nofi" open><summary>展開／收合城市清單</summary><div class="cities" id="cities"></div></details>
-</section>
-</div>
-<div id="view-sig" hidden>
-<section aria-labelledby="sh" style="display:flex;flex-direction:column;gap:14px">
-  <div class="sechead"><h2 class="sec" id="sh">開場信號曲</h2><span class="hint">演出開始前播放、讓觀眾知道「要開始了」的那首歌</span></div>
-  <details class="mdesc" open><summary>說明</summary><p class="lede" style="font-size:13.5px">開場信號曲是演出開始前播放、讓觀眾知道「要開始了」的歌。本頁收錄的各場나무위키條目都沒有寫太妍演唱會的開場信號曲，所以目前每一場都標為「未查到紀錄」；找到可以核對的來源後會補上。</p></details>
-  <ol class="sigs" id="sigs"></ol>
 </section>
 </div>
 <div id="view-cmp" hidden>
@@ -855,10 +846,6 @@ h1 .r{color:var(--coral-ink)}
   <div class="tbl"><table class="rv" id="ltt"></table></div>
   <p class="hint" style="margin:0" id="ltnote"></p>
 </section>
-<section class="anasec" id="a-kr" aria-labelledby="krh">
-  <div class="sechead"><h2 class="sec" id="krh">韓國場 vs 海外場</h2><span class="hint">同一個巡演，只在韓國唱或只在海外唱的歌</span></div>
-  <div class="kv" id="krv"></div>
-</section>
 <section class="anasec" id="a-city" aria-labelledby="cth">
   <div class="sechead"><h2 class="sec" id="cth">城市回訪</h2><span class="hint">被兩個以上的巡演造訪過的城市</span></div>
   <div class="kv" id="ctv"></div>
@@ -867,10 +854,6 @@ h1 .r{color:var(--coral-ink)}
   <div class="sechead"><h2 class="sec" id="vnh">場館回訪</h2><span class="hint">被兩個以上的巡演使用過的場館</span></div>
   <div class="kv" id="vnv"></div>
   <p class="hint" style="margin:0" id="vnnote"></p>
-</section>
-<section class="anasec" id="a-solo" aria-labelledby="soh">
-  <div class="sechead"><h2 class="sec" id="soh">嘉賓舞台</h2><span class="hint">setlist 標明有嘉賓一起演出的歌</span></div>
-  <div class="kv" id="sov"></div>
 </section>
 <section class="anasec" id="a-carry" aria-labelledby="cyh">
   <div class="sechead"><h2 class="sec" id="cyh">少女時代・TTS 曲</h2><span class="hint">太妍個人演唱會唱過的少女時代與 TTS 歌曲</span></div>
@@ -1084,13 +1067,7 @@ function visible(t){return filter==="all"||t.who===filter}
 function tag(t){return `<span class="tag${t.live?" live":""}"><span class="dot" style="background:${whoBg(t.who)}"></span>${t.live?LG("即將舉行","Upcoming")+" · ":""}${esc(WHO[t.who].zh)} · ${esc(TR(t.typeLabel))}</span>`}
 
 /* ---------- header chips + stats ---------- */
-function renderChips(){
-  const opts=[["all",LG("全部","All"),null],...Object.entries(WHO).map(([k,v])=>[k,v.zh,whoBg(k)])];
-  $("#who").innerHTML=opts.map(([k,l,c])=>`<button type="button" data-w="${k}" aria-pressed="${k===filter}">${c?`<span class="dot" style="background:${c}"></span>`:""}${esc(l)}</button>`).join("");
-  $("#who").querySelectorAll("button").forEach(b=>b.onclick=()=>{filter=b.dataset.w;renderChips();applyFilter()});
-  const sel=$("#whoSel");sel.innerHTML=opts.map(([k,l])=>`<option value="${k}"${k===filter?" selected":""}>${esc(l)}</option>`).join("");
-  sel.onchange=()=>{filter=sel.value;renderChips();applyFilter()};
-}
+function renderChips(){} /* single artist: no series filter; filter stays "all" */
 let _cuFirst=true;
 function countUp(root){
   if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;
@@ -1488,7 +1465,7 @@ function applyFilter(){
   if(typeof playT!=="undefined"&&playT){clearTimeout(playT);playT=0;playTo=null;const lb=document.getElementById("mplab");if(lb)lb.hidden=true;const pb=document.getElementById("mplay");if(pb){pb.setAttribute("aria-pressed","false");pb.textContent=LG("▶ 播放","▶ Play")}}
   setAccent();
   document.querySelectorAll("[data-tid]").forEach(el=>el.hidden=!visible(TOURS.find(t=>t.id===el.dataset.tid)));
-  renderStats();renderNext();drawTimeline();drawMap();if(!$("#view-cmp").hidden)renderCmp();if(!$("#view-ana").hidden)renderAna();if(!$("#view-songs").hidden)renderAlbums();if(!$("#view-sig").hidden)renderSig();
+  renderStats();renderNext();drawTimeline();drawMap();if(!$("#view-cmp").hidden)renderCmp();if(!$("#view-ana").hidden)renderAna();if(!$("#view-songs").hidden)renderAlbums();
 }
 function recolor(){renderIndex();applyFilter();document.querySelectorAll("section.tour").forEach(sec=>{const [a,b]=tc(sec.id);sec.style.setProperty("--tc",a);sec.style.setProperty("--tc2",b||a)});if(!$("#view-cmp").hidden)renderCmp()}
 matchMedia("(prefers-color-scheme: dark)").addEventListener("change",recolor);
@@ -1508,23 +1485,6 @@ if(NARROW()){region="asia";syncRegion();}
 new MutationObserver(()=>recolor()).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
 
 
-
-/* ---------- start-signal songs ---------- */
-const SIG=Object.fromEntries(TOURS.map(t=>[t.id,{song:null,src:"none",note:t.id==="fly"?"尚未舉行。":t.id==="decal"?"全部場次取消，沒有舉行。":null}]));
-function albumOf(k){for(const g of ALBUMS)for(const a of g.list)for(const x of a.tr)if(!x.ver&&keyOf(x.t,x.k)===k)return a;return null}
-function sungIn(t,k){let n=0;shows(t).forEach(r=>{const show={date:r[0],city:r[1]};const v=variantFor(t,show);
-  if(v.items.some(i=>i.t&&!i.nc&&(i.k?[i.t]:i.t.split(" / ")).some(part=>keyOf(part,i.k)===k))||(t.extras||[]).some(([sg,on])=>keyOf(sg)===k&&(on.includes(show.date)||on.includes(show.city))))n++});return n}
-function renderSig(){
-  let prev=null;
-  $("#sigs").innerHTML=TOURS.filter(visible).map(t=>{const g=SIG[t.id];
-    const head=`<span class="yr">${t.yrs}</span><span class="tn"><a href="#${t.id}">${esc(t.name)}</a><small><span class="dot" style="background:${whoBg(t.who)}"></span>${esc(WHO[t.who].zh)} · ${esc(TR(t.typeLabel))}</small></span>`;
-    if(!g.song)return `<li class="sig none">${head}<span class="song"><b>${LG("未查到紀錄","No record found")}</b><p>${esc(TR(g.note)||LG("該場나무위키條目沒有寫開場信號曲。","The show's Namuwiki article doesn't name a start-signal song."))}</p></span></li>`;
-    const k=keyOf(g.song),a=albumOf(k),n=sungIn(t,k),tot=shows(t).length;
-    const changed=false;
-    return `<li class="sig">${head}<span class="song">${changed?`<span class="chg">${LG("信號曲首次更換","First change of signal song")}</span>`:""}<b>${esc(g.song)}</b>
-      <span class="meta">${a?`<span>${LG(`收錄於 ${esc(a.n)}（${a.d.slice(0,4)}）`,`From ${esc(a.n)} (${a.d.slice(0,4)})`)}</span>`:""}<span class="badge${g.src==="ok"?" ok":""}">${g.src==="ok"?LG("明確記載","Documented"):LG("依慣例","By tradition")}</span><span>${n?LG(`本巡演也唱了 ${n}/${tot} 場`,`Also performed at ${n}/${tot} shows`):LG("本巡演沒有演唱","Not performed on this tour")}</span></span>
-      ${g.note?`<p>${esc(TR(g.note))}</p>`:""}</span></li>`}).join("");
-}
 
 /* ---------- song lookup drawer ---------- */
 let lastFocus=null;
@@ -1712,11 +1672,6 @@ function renderAna2(st,meta,vis){
   deb.sort(dbSort==="days"?(a,b)=>b.days-a.days||a.f.date.localeCompare(b.f.date):(a,b)=>a.f.date.localeCompare(b.f.date));
   $("#debt").innerHTML=`<thead><tr><th>${LG("歌曲","Song")}</th><th>${LG("舞台首唱","Live debut")}</th><th>${LG("正式發行","Released")}</th><th style="text-align:right">${LG("提早","Early by")}</th></tr></thead><tbody>${deb.map(d=>`<tr><td>${songBtn(d.k,d.t)}</td><td>${fmt(d.f.date)}<span class="en">${esc(d.f.tour.name)}・${esc(CN(d.f.city))}</span></td><td>${fmt(d.m.a.d)}<span class="en">${esc(d.m.a.n)}</span></td><td class="n">${NU(d.days,"天","day")}</td></tr>`).join("")||`<tr><td colspan="4" class="hint">${LG("目前範圍內沒有","None in this range")}</td></tr>`}</tbody>`;
   bindSongBtns($("#debt"));
-  /* korea vs overseas */
-  const kr=vis.map(t=>{const K=new Map(),O=new Map();shows(t).forEach(r=>{const tgt=CITY[r[1]][1]==="韓國"?K:O;showSeq(t,r[0],r[1]).forEach(o=>tgt.set(o.k,o.t))});
-    if(!K.size||!O.size)return "";const ok=[...K].filter(([k])=>!O.has(k)),oo=[...O].filter(([k])=>!K.has(k));
-    return `<div class="kvc"><b class="h">${esc(t.name)}</b><span class="lab">${LG("只在韓國","Korea only")} ${BR(ok.length)}</span><div class="sg">${ok.map(([k,n])=>`<span>${esc(SN(n))}</span>`).join("")||"—"}</div><span class="lab">${LG("只在海外","Overseas only")} ${BR(oo.length)}</span><div class="sg o">${oo.map(([k,n])=>`<span>${esc(SN(n))}</span>`).join("")||"—"}</div></div>`}).join("");
-  $("#krv").innerHTML=kr||`<p class="hint">${LG("目前範圍內沒有同時有韓國與海外場次的巡演","No tour in this range has both Korean and overseas shows")}</p>`;
   /* city revisits */
   const cm=new Map();showsV.forEach(s=>{const m=cm.get(s.city)||new Map();const e=m.get(s.tour)||{t:s.tour,first:s.date,n:0};e.n++;if(s.date<e.first)e.first=s.date;m.set(s.tour,e);cm.set(s.city,m)});
   const cities=[...cm.entries()].filter(([c,m])=>m.size>=2).sort((a,b)=>b[1].size-a[1].size||a[0].localeCompare(b[0]));
@@ -1733,11 +1688,6 @@ function renderAna2(st,meta,vis){
       return `${i?`<span class="gp">→ ${gap<1/12?LG("同月","same month"):gap<1?NU(Math.round(gap*12),"個月","month"):YRS(gap.toFixed(1))} →</span>`:""}<span class="st" style="border-color:${tc(v.t.id)[0]}">${v.first.slice(0,7).replace("-",".")} ${esc(v.t.name)}${v.n>1?` ×${v.n}`:""}${fut?LG("（未舉行）"," (upcoming)"):""}</span>`}).join("")}</div></div>`}).join("")||`<p class="hint">${LG("目前範圍內沒有","None in this range")}</p>`;
   const vTot=vm.size;
   $("#vnnote").textContent=LG(`目前範圍內共 ${vTot} 個場館，其中 ${vens.length} 個被兩個以上的巡演使用過。「×2」代表同一個巡演在這裡演了 2 場。`,`${vTot} venues in this range; ${vens.length} were used by two or more tours. "×2" means that tour played there twice.`);
-  /* guest stages */
-  const gs=vis.map(t=>{const m=new Map();t.sets.forEach(v=>v.items.forEach(i=>{if(!i.gst)return;const o=m.get(i.gst)||new Map();o.set(keyOf(i.t,i.k),{t:i.t,lab:v.label});m.set(i.gst,o)}));
-    if(!m.size)return "";
-    return `<div class="kvc"><b class="h">${esc(t.name)} <span class="hint">${t.yrs}</span></b>${[...m.entries()].map(([who,l])=>`<div><span class="lab">${esc(TR(who))}</span><div class="sg">${[...l.values()].map(x=>`<span>${esc(SN(x.t))} <small style="color:var(--muted)">${esc(BR(TR(x.lab)))}</small></span>`).join("")}</div></div>`).join("")}</div>`}).join("");
-  $("#sov").innerHTML=gs||`<p class="hint">${LG("目前範圍內沒有嘉賓舞台紀錄","No guest stages in this range")}</p>`;
 }
 
 /* ---------- song pairs ---------- */
@@ -1829,11 +1779,7 @@ function donutSVG(parts,size,inner,label){
 }
 const DON_ORDER=["kr","jp"];
 const whoFill=w=>`var(${WHO[w].c})`;
-function renderArtistDonut(){
-  const cnt={};ALL.forEach(s=>cnt[s.tour.who]=(cnt[s.tour.who]||0)+1);
-  const parts=DON_ORDER.map(w=>({v:cnt[w]||0,fill:whoFill(w),label:WHO[w].zh,dim:filter!=="all"&&filter!==w}));
-  $("#adon").innerHTML=donutSVG(parts,76,.58,ALL.length)+`<div class="adlg">${DON_ORDER.map(w=>`<span class="${filter!=="all"&&filter!==w?"dim":""}"><i style="background:var(${WHO[w].c})"></i>${esc(WHO[w].zh)}</span><span class="n ${filter!=="all"&&filter!==w?"dim":""}">${cnt[w]||0}</span>`).join("")}</div>`;
-}
+function renderArtistDonut(){}
 function tourComp(t){
   const ks=new Map();shows(t).forEach(r=>showSeq(t,r[0],r[1]).forEach(o=>ks.set(o.k,1)));
   const meta=albMeta();let a=0,b=0,c=0;ks.forEach((_,k)=>{if(!meta.has(k))c++;else if(TITLES.has(k))a++;else b++});return {a,b,c};
@@ -2291,8 +2237,8 @@ async function openCard(tid,vi){
 function showView(v,scroll){
   document.querySelectorAll(".ptabs button").forEach(b=>b.setAttribute("aria-selected",b.dataset.v===v));
   {const bar=document.querySelector(".ptabs"),ab=bar.querySelector(`[data-v="${v}"]`);if(ab){const l=ab.offsetLeft,r=l+ab.offsetWidth;if(l<bar.scrollLeft)bar.scrollLeft=l-12;else if(r>bar.scrollLeft+bar.clientWidth)bar.scrollLeft=r-bar.clientWidth+12;}}
-  $("#view-main").hidden=v!=="main";$("#view-songs").hidden=v!=="songs";$("#view-sig").hidden=v!=="sig";$("#view-cmp").hidden=v!=="cmp";$("#view-ana").hidden=v!=="ana";$("#view-play").hidden=v!=="play";document.querySelector(".fbar").hidden=v==="play";if(v==="ana"){$("#view-ana").style.display="flex"}else{$("#view-ana").style.display=""}
-  if(v==="songs")renderAlbums();if(v==="sig")renderSig();if(v==="cmp")renderCmp();if(v==="ana")renderAna();if(v==="play")renderPlay();
+  $("#view-main").hidden=v!=="main";$("#view-songs").hidden=v!=="songs";$("#view-cmp").hidden=v!=="cmp";$("#view-ana").hidden=v!=="ana";$("#view-play").hidden=v!=="play";if(v==="ana"){$("#view-ana").style.display="flex"}else{$("#view-ana").style.display=""}
+  if(v==="songs")renderAlbums();if(v==="cmp")renderCmp();if(v==="ana")renderAna();if(v==="play")renderPlay();
   if(v==="main"){drawTimeline();const w=document.getElementById("map").parentElement.clientWidth;if(w&&Math.abs(w-lastW)>=2){lastW=w;sizeMap();drawMap()}}
   $("#abar").hidden=v!=="ana";setTabH();
   if(scroll){const y=Math.round(document.querySelector("header").getBoundingClientRect().bottom+window.scrollY);window.scrollTo({top:y,left:0,behavior:"instant"})}
@@ -2311,7 +2257,7 @@ document.querySelectorAll(".ptabs button").forEach(b=>b.onclick=()=>showView(b.d
 function routeHash(){
   const h=decodeURIComponent(location.hash.slice(1));
   if(h==="en"||h==="zh"){setLang(h);if($("#view-main").hidden)showView("main");return}
-  if(["songs","sig","cmp","ana","play"].includes(h)){showView(h);return}
+  if(["songs","cmp","ana","play"].includes(h)){showView(h);return}
   if(h.startsWith("song-")){const k=keyFromHash(h);if(k)openSong(k,songTitle(k));return}
   if(h.startsWith("a-")){showView("ana");const el=document.getElementById(h);if(el)requestAnimationFrame(()=>el.scrollIntoView());return}
   if(!$("#view-main").hidden&&!h)return;
@@ -2326,7 +2272,7 @@ renderChips();renderIndex();renderTours();applyFilter();routeHash();
 $("#otd").addEventListener("click",e=>{const a=e.target.closest("a[data-otd]");if(!a)return;e.preventDefault();showView("main");openTour(a.dataset.otd)});
 if("IntersectionObserver" in window&&!matchMedia("(prefers-reduced-motion: reduce)").matches){
   const io2=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io2.unobserve(e.target)}}),{rootMargin:"0px 0px -8% 0px"});
-  document.querySelectorAll("#view-main > section,.anasec,#view-songs > section,#view-sig > section,#view-cmp > section").forEach(el=>{const r=el.getBoundingClientRect();if(r.top>innerHeight){el.classList.add("fx");io2.observe(el)}});
+  document.querySelectorAll("#view-main > section,.anasec,#view-songs > section,#view-cmp > section").forEach(el=>{const r=el.getBoundingClientRect();if(r.top>innerHeight){el.classList.add("fx");io2.observe(el)}});
   setTimeout(()=>document.querySelectorAll(".fx:not(.in)").forEach(el=>{if(el.getBoundingClientRect().top<innerHeight)el.classList.add("in")}),1500);
 }
 </script>
